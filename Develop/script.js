@@ -24,7 +24,7 @@ function confirmData (){
     }
 
   while(upperCase ===false  && lowerCase ===false && numeric ===false && specialChar === false){
-    window.prompt("Please select at least one criteria!");
+    window.alert("Please select at least one criteria!");
     confirmData();
   };
   console.log(upperCase);
@@ -41,19 +41,20 @@ function confirmData (){
 function writePassword() {
 
   alert("Welcome to the password generator, please select the following criteria!")
-  var length = window.prompt ("How many character do you want on your password? Please select a number between 8 and 128");
-  if (length < 8 || length> 128){
+  var lengthOfPassword = window.prompt ("How many character do you want on your password? Please select a number between 8 and 128");
+  if (lengthOfPassword < 8 || lengthOfPassword> 128){
     alert ("Number not valid. Please select again");
     writePassword ()
   };
     
   confirmData();
-  
-    for(i=0; i<length; i++){
-    var generatePassword= passwordOptionsSelected[Math.floor(Math.random()*length)]
+
+  ////como crear un string with the for loop?????? preguntar a TA
+    for(var i=0; i<lengthOfPassword; i++){
+    var generatePassword= passwordOptionsSelected[Math.floor(Math.random()*lengthOfPassword)]
     console.log (generatePassword);
     }
-
+    
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
