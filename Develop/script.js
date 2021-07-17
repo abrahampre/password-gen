@@ -1,5 +1,5 @@
 // Assignment code here
-
+var four-options 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
