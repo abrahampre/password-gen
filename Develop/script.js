@@ -3,39 +3,46 @@
 // lo mandamos al final con el event listener para 
 //el momento del click
 var generateBtn = document.querySelector("#generate");
+var passwordOptionsSelected2 = "";
+
 
 function confirmData (){
 
-  var upperCase = window.confirm ("Do you want uppercase in your passowrd?");
-    if (upperCase){
-      upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  var upperCaseConfirm = window.confirm ("Do you want uppercase in your passowrd?");
+    if (upperCaseConfirm){
+     var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     };
-  var lowerCase = window.confirm ("Do you want lowercase in your passowrd?");
-    if (lowerCase){
-      lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var lowerCaseConfirm = window.confirm ("Do you want lowercase in your passowrd?");
+    if (lowerCaseConfirm){
+      var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     };
-  var numeric = window.confirm("Do you want numers in your password?");
-    if (numeric){
-      numeric = numeric = ['0','1','2','3','4','5','6','7','8','9'];
+  var numericConfirm = window.confirm("Do you want numers in your password?");
+    if (numericConfirm){
+     var numeric = ['0','1','2','3','4','5','6','7','8','9'];
     };
-  var specialChar = window.confirm("Do you want special characters in your password");
-    if (specialChar){
-      specialChar = ['<','(','[','{','\\','^','-','=','$','!','|',']','}',')','?','*','+','.','>'];
-    }
+  var specialCharConfirm = window.confirm("Do you want special characters in your password");
+    if (specialCharConfirm){
+     var specialChar = ['<','(','[','{','\\','^','-','=','$','!','|',']','}',')','?','*','+','.','>'];
+    };
 
   while(upperCase ===false  && lowerCase ===false && numeric ===false && specialChar === false){
     window.alert("Please select at least one criteria!");
     confirmData();
   };
-  console.log(upperCase);
-  console.log(lowerCase);
-  console.log(numeric);
-  console.log(specialChar);
+  // console.log(upperCase);
+  // console.log(lowerCase);
+  // console.log(numeric);
+  // console.log(specialChar);
 
-   var passwordOptionsSelected = [upperCase + lowerCase + numeric + specialChar ];
+   var passwordOptionsSelected = upperCaseConfirm.toString () + lowerCaseConfirm.toString() + numericConfirm.toString() + specialCharConfirm.toString() ;
    console.log(passwordOptionsSelected);
 
-};
+   passwordOptionsSelected2 = [upperCase + lowerCase + numeric + specialChar] ;
+   console.log(passwordOptionsSelected2);
+
+   console.log(passwordOptionsSelected2.length);
+
+  };
 
 // Write password to the #password input
 function writePassword() {
@@ -46,15 +53,32 @@ function writePassword() {
     alert ("Number not valid. Please select again");
     writePassword ()
   };
-    
-  confirmData();
+ 
 
+
+  confirmData();
+  
+  
+  
+  var generatePassword = "";
   ////como crear un string with the for loop?????? preguntar a TA
     for(var i=0; i<lengthOfPassword; i++){
-    var generatePassword= passwordOptionsSelected[Math.floor(Math.random()*lengthOfPassword)]
-    console.log (generatePassword);
-    }
+   // console.log("Array of total selected options", passwordOptionsSelected2);
+   
+   var randomNumber= (Math.floor(Math.random()*lengthOfPassword));
+   console.log ("random number", randomNumber);
+   
+   //generatePassword[i]=
+   
+   //generatePassword += random
+   
+   //passwordOptionsSelected2 [randomNumber]
+    //char[] text = new char[lengthOfPassword]
     
+    //generatePassword += passwordOptionsSelected2[Math.floor(Math.random()*lengthOfPassword)];
+   // console.log ("picked random matching length",generatePassword);
+    };
+    system.out.println() 
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
