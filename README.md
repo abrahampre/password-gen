@@ -26,5 +26,5 @@ Based on the user selections, the password will be generated and displayed on th
 
 Git Hub Link: https://github.com/abrahampre/password-gen.git
 
-Deployed link: 
+Deployed link: https://abrahampre.github.io/password-gen/
 
