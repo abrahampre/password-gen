@@ -52,13 +52,15 @@ function writePassword() {
   };
  
   confirmData();
- 
-  
+  console.log("from here we are going to take the length",passwordOptionsSelected2);
+
+  var lengthOfOptions = passwordOptionsSelected2.length;
+  console.log(passwordOptionsSelected2.length);
   var generatePassword = "";
   ////como crear un string with the for loop?????? preguntar a TA
     for(var i=0; i<lengthOfPassword; i++){
    // console.log("Array of total selected options", passwordOptionsSelected2);
-  randomNumber= (Math.floor(Math.random()*lengthOfPassword)); //<---this one working
+  randomNumber= (Math.floor(Math.random()*lengthOfOptions)); //<---this one working
   
   
    console.log ("random number", randomNumber);
@@ -69,12 +71,12 @@ function writePassword() {
 
   console.log(passwordOptionsSelected2[randomNumber])
   generatePassword += passwordOptionsSelected2[randomNumber]; //<---this one doesnt work error not a function
-  console.log(generatePassword);
+  console.log("this is the generated password",generatePassword);
    
     };
   
 
-  //var password = generatePassword();
+ 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = generatePassword;
