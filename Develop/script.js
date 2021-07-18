@@ -1,38 +1,39 @@
 
-
+// Creating Variables
 var generateBtn = document.querySelector("#generate");
 var passwordOptionsSelected2 = [];
 
-function confirmData (){
 
- //var passwordOptionsSelected2 = [];
+//Function to pick the options with a window confirm
+
+function confirmData (){
   
- var upperCaseConfirm = window.confirm ("Do you want uppercase in your passowrd?");
+ var upperCaseConfirm = window.confirm ("Do you want uppercase in your password?");
     if (upperCaseConfirm){
      var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
      passwordOptionsSelected2 =  passwordOptionsSelected2.concat(upperCase);
      console.log(passwordOptionsSelected2);
     };
-  var lowerCaseConfirm = window.confirm ("Do you want lowercase in your passowrd?");
+  var lowerCaseConfirm = window.confirm ("Do you want lowercase in your password?");
     if (lowerCaseConfirm){
       var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
      passwordOptionsSelected2 = passwordOptionsSelected2.concat(lowerCase);
      console.log(passwordOptionsSelected2);
     };
-  var numericConfirm = window.confirm("Do you want numers in your password?");
+  var numericConfirm = window.confirm("Do you want numbers in your password?");
     if (numericConfirm){
      var numeric = ['0','1','2','3','4','5','6','7','8','9'];
      passwordOptionsSelected2 = passwordOptionsSelected2.concat(numeric);
      console.log(passwordOptionsSelected2);
     };
-  var specialCharConfirm = window.confirm("Do you want special characters in your password");
+  var specialCharConfirm = window.confirm("Do you want special characters in your password?");
     if (specialCharConfirm){
      var specialChar = ['<','(','[','{','\\','^','-','=','$','!','|',']','}',')','?','*','+','.','>'];
      passwordOptionsSelected2 = passwordOptionsSelected2.concat(specialChar);
      console.log(passwordOptionsSelected2);
     };
 
-  while(upperCase ===false  && lowerCase ===false && numeric ===false && specialChar === false){
+  if (upperCaseConfirm ===false && lowerCaseConfirm ===false && numericConfirm ===false && specialCharConfirm === false){
     window.alert("Please select at least one criteria!");
     confirmData();
   };
@@ -45,7 +46,7 @@ function confirmData (){
 function writePassword() {
 
   alert("Welcome to the password generator, please select the following criteria!")
-  var lengthOfPassword = window.prompt ("How many character do you want on your password? Please select a number between 8 and 128");
+  var lengthOfPassword = window.prompt ("How many character do you want on your password? Please select a number not less than 8 or grater than 128");
   if (lengthOfPassword < 8 || lengthOfPassword> 128){
     alert ("Number not valid. Please select again");
     writePassword ()
